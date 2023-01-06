@@ -6,16 +6,16 @@
 //
 
 import Foundation
-protocol BusquedaApiDelegate {
-    func didUpdateAnime(movie: [Datas])
+protocol MostrarDelegate {
+    func didUpdateAnime(movie: MostrarDatas)
     func didFailWithError(error: Error)
 }
 
-struct BusquedaApi {
-    let tmdbURL = "https://api.jikan.moe/v4/anime?letter="
-    var delegate: BusquedaApiDelegate?
-    func Tipo(tipo: String) {
-        let urlString = "\(tmdbURL)\(tipo)"
+struct MostrarApi {
+    let tmdbURL = "https://api.jikan.moe/v4/anime/"
+    var delegate: MostrarDelegate?
+    func Tipo(tipo: Int) {
+        let urlString = "\(tmdbURL)\(tipo)/full"
         self.performRequest(urlString: urlString)
     }
     
@@ -41,10 +41,10 @@ struct BusquedaApi {
         }
     }
     
-    func parseJSON(animeData: Data) -> [Datas]? {
+    func parseJSON(animeData: Data) -> MostrarDatas? {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(AnimeData.self, from: animeData)
+            let decodedData = try decoder.decode(MostrarData.self, from: animeData)
             let resultados = decodedData.data// aqui se descomprime
             return resultados
         } catch {

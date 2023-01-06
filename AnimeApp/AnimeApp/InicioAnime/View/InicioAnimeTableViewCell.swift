@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol darDatoInicio {
+    func darDato(_ dato: Int)
+}
+
 class InicioAnimeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var inicioSeccionLabel: UILabel!
@@ -15,8 +19,11 @@ class InicioAnimeTableViewCell: UITableViewCell {
     @IBOutlet weak var inicioCollectionView: UICollectionView!
     
     var animes: [Datas]?
-    
+    var id: Int?
+    var delegates: darDatoInicio?
     var inicioTopsSeriesManager = InicioTopsSeries()
+    
+    var man = InicioAnimeViewController()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,6 +58,11 @@ extension InicioAnimeTableViewCell: UICollectionViewDelegate, UICollectionViewDa
         
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.id = animes?[indexPath.row].mal_id
+        self.delegates?.darDato(animes![indexPath.row].mal_id)
+        print(animes![indexPath.row].mal_id)
+    }
 }
 
 extension InicioAnimeTableViewCell: InicioTopsSeriesDelegate {
@@ -65,4 +77,6 @@ extension InicioAnimeTableViewCell: InicioTopsSeriesDelegate {
         
     }
 
-}
+}    
+    
+

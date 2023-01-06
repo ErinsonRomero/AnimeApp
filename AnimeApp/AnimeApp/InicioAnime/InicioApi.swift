@@ -28,13 +28,11 @@ struct InicioTopsSeries {
             let task = session.dataTask(with: url) { data, response, error in
                 if error != nil {
                     delegate?.didFailWithError(error: error!)
-                    print("gg")
                     return
                 }
                 if let safeData = data {
                     if  let cartelMostrar = self.parseJSON(animeData: safeData) {
                         self.delegate?.didUpdateAnime(movie: cartelMostrar)
-                        print(cartelMostrar[0].title)
                     }
                 }
             }//aqui el session toma todos los datos de la pagina

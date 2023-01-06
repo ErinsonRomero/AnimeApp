@@ -26,5 +26,8 @@ class BusquedaAnimeTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    override func prepareForReuse() {
+        busquedaAnimeImage.image = UIImage(named: "SinImagen")
+    }
 
 }
