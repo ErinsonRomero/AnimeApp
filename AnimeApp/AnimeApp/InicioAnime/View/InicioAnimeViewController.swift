@@ -40,25 +40,18 @@ extension InicioAnimeViewController: UITableViewDelegate, UITableViewDataSource 
         let celda = inicioAnimeTable.dequeueReusableCell(withIdentifier: "InicioAnimeTableViewCell", for: indexPath) as! InicioAnimeTableViewCell
         celda.inicioTopsSeriesManager.Tipo(tipo: listaTipos[indexPath.row])
         celda.inicioSeccionLabel.text = listaSecciones[indexPath.row]
+        celda.delegates = self
         return celda
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 298
         
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
-    }
-
 }
 extension InicioAnimeViewController: darDatoInicio {
     func darDato(_ dato: Int) {
-        print("llego")
-        DispatchQueue.main.async {
-            self.id = dato
-            self.performSegue(withIdentifier: "inicioToShow", sender: self)
-        }
-        
+        id = dato
+        performSegue(withIdentifier: "inicioToShow", sender: self)
     }
     
     

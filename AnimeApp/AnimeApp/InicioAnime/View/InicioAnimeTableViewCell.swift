@@ -31,7 +31,6 @@ class InicioAnimeTableViewCell: UITableViewCell {
         
         inicioCollectionView.delegate = self
         inicioCollectionView.dataSource = self
-        
         inicioTopsSeriesManager.delegate = self
         
     }
@@ -61,7 +60,6 @@ extension InicioAnimeTableViewCell: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.id = animes?[indexPath.row].mal_id
         self.delegates?.darDato(animes![indexPath.row].mal_id)
-        print(animes![indexPath.row].mal_id)
     }
 }
 

@@ -116,7 +116,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="155" height="232"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Bj-IA-Fxz">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SinImagen" translatesAutoresizingMaskIntoConstraints="NO" id="8Bj-IA-Fxz">
                                                                         <rect key="frame" x="8" y="7" width="139" height="183"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="131" id="cHq-QX-65R"/>
@@ -184,6 +184,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="4tn-P9-Hc6">
                             <connections>
                                 <action selector="guardadosButton:" destination="Ipt-xP-jVw" id="ffJ-Wf-NzL"/>
+                                <segue destination="vSy-6z-sQv" kind="show" id="fMQ-dw-jVV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -197,6 +198,71 @@
             </objects>
             <point key="canvasLocation" x="1588.5496183206105" y="-1592.2535211267607"/>
         </scene>
+        <!--Guardados-->
+        <scene sceneID="lrU-Mg-2Hg">
+            <objects>
+                <viewController id="vSy-6z-sQv" customClass="GuardadosViewController" customModule="AnimeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="awb-WJ-rUW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vNb-QT-QFj">
+                                <rect key="frame" x="0.0" y="155" width="393" height="565"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Fondo"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GuardadosTableCell" rowHeight="188" id="STK-2o-zkF" customClass="GuardadosTableViewCell" customModule="AnimeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="188"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="STK-2o-zkF" id="Roo-E6-7OT">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="188"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SinImagen" translatesAutoresizingMaskIntoConstraints="NO" id="qrW-QT-zwA">
+                                                    <rect key="frame" x="20" y="11" width="133" height="166"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="166" id="96s-fb-2k2"/>
+                                                        <constraint firstAttribute="width" constant="133" id="Q7K-Ko-eZd"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjF-jt-KTm">
+                                                    <rect key="frame" x="161" y="84" width="212" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qrW-QT-zwA" firstAttribute="leading" secondItem="Roo-E6-7OT" secondAttribute="leadingMargin" id="0GN-55-dj7"/>
+                                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="LjF-jt-KTm" secondAttribute="trailing" constant="20" symbolic="YES" id="0nu-uj-yTD"/>
+                                                <constraint firstItem="LjF-jt-KTm" firstAttribute="top" secondItem="Roo-E6-7OT" secondAttribute="topMargin" constant="73" id="8gN-KW-4SQ"/>
+                                                <constraint firstItem="qrW-QT-zwA" firstAttribute="bottom" secondItem="Roo-E6-7OT" secondAttribute="bottomMargin" id="Neq-TG-hzZ"/>
+                                                <constraint firstItem="qrW-QT-zwA" firstAttribute="top" secondItem="Roo-E6-7OT" secondAttribute="topMargin" id="nno-0m-0Lo"/>
+                                                <constraint firstItem="LjF-jt-KTm" firstAttribute="leading" secondItem="qrW-QT-zwA" secondAttribute="trailing" constant="8" id="oQJ-lg-Uzx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Fondo"/>
+                                        <connections>
+                                            <outlet property="fondoImage" destination="qrW-QT-zwA" id="dvg-qD-t77"/>
+                                            <outlet property="tituloLabel" destination="LjF-jt-KTm" id="oxv-Ym-8f3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jWy-ob-sS5"/>
+                        <color key="backgroundColor" name="Fondo"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Guardados" id="mRh-G7-VLE"/>
+                    <connections>
+                        <outlet property="guardadosTableView" destination="vNb-QT-QFj" id="8xO-NG-Ihc"/>
+                        <segue destination="ny8-05-TAM" kind="show" identifier="guardadoToShow" id="1wa-c3-aFo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kng-NT-vTX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2535.1145038167938" y="-1102.1126760563382"/>
+        </scene>
         <!--Busqueda Anime View Controller-->
         <scene sceneID="efO-pa-9yD">
             <objects>
@@ -206,10 +272,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SXq-7e-tTK">
-                                <rect key="frame" x="20" y="155" width="353" height="565"/>
+                                <rect key="frame" x="20" y="103" width="353" height="617"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wvp-9C-d4h">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="565"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="617"/>
                                         <color key="backgroundColor" name="Fondo"/>
                                         <color key="separatorColor" name="Fondo"/>
                                         <color key="sectionIndexBackgroundColor" name="Fondo"/>
@@ -276,7 +342,7 @@
                             <constraint firstItem="YjF-gJ-Ifk" firstAttribute="bottom" secondItem="SXq-7e-tTK" secondAttribute="bottom" id="qmb-MY-93B"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="EL5-No-MZ5"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="EL5-No-MZ5"/>
                     <connections>
                         <outlet property="BusquedaAnimeTable" destination="wvp-9C-d4h" id="WAR-5b-8Xy"/>
                         <segue destination="ny8-05-TAM" kind="show" identifier="busquedaToShow" id="irR-Nz-2HI"/>
@@ -402,8 +468,15 @@
                             <constraint firstItem="VEH-vI-F1T" firstAttribute="bottom" secondItem="PYQ-4k-P9H" secondAttribute="bottom" id="vpw-sE-jIc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ctN-gK-NmA"/>
+                    <navigationItem key="navigationItem" id="Dzw-Tp-8Be">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wUx-xL-AQZ">
+                            <connections>
+                                <action selector="saveButton:" destination="ny8-05-TAM" id="RDA-3T-Udw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="wUx-xL-AQZ" id="RV2-fG-b8A"/>
                         <outlet property="episodiosLabel" destination="SfH-BF-Aac" id="iJX-2u-aTa"/>
                         <outlet property="generosLabel" destination="zmB-Mx-ALe" id="AHM-v6-jFJ"/>
                         <outlet property="imagenImage" destination="mzc-sE-gG4" id="WSM-lR-0uE"/>
@@ -420,7 +493,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zBx-aX-uZL"/>
+        <segue reference="1wa-c3-aFo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SinImagen" width="681" height="528"/>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MostrarAnimeViewController: UIViewController {
     
@@ -17,22 +18,25 @@ class MostrarAnimeViewController: UIViewController {
     @IBOutlet weak var generosLabel: UILabel!
     @IBOutlet weak var nombreCopyButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var addButton: UIBarButtonItem!
     
     
     var id: Int?
     var name: String?
     var anime: MostrarDatas?
     var mostrarAnimeManager = MostrarApi()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var items: [AnimeGuardado]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchAnimesGuardados()
         mostrarAnimeManager.delegate = self
         if let ids = id {
             mostrarAnimeManager.Tipo(tipo: ids)
         }
         if let nombre = anime?.title {
             nombreLabel.text = nombre
-            
         }
         if let imagen = anime?.images?.jpg?.large_image_url {
             imagenImage.downloaded(from: imagen)
@@ -57,6 +61,31 @@ class MostrarAnimeViewController: UIViewController {
         if let score = anime?.score {
             scoreLabel.text = "Score: \(score)"
         }
+        
+    }
+    
+    
+    func fetchAnimesGuardados() {
+        do {
+            self.items = try context.fetch(AnimeGuardado.fetchRequest())
+            if let item = self.items {
+                for i in item {
+                    if i.id == String(self.id!){
+                        self.addButton.isHidden = true
+                        break
+                    } else {
+                        self.addButton.isHidden = false
+                    }
+                }
+            }
+        } catch {}
+    }
+    
+    func saveAnimesGuardados(_ serie: AnimeGuardado) {
+        do {
+            try self.context.save()
+            
+        } catch {}
     }
     
     @IBAction func copyButton(_ sender: Any) {
@@ -65,7 +94,19 @@ class MostrarAnimeViewController: UIViewController {
         
     }
     
-
+    
+    @IBAction func saveButton(_ sender: Any) {
+        if anime != nil {
+            addButton.isHidden = true
+            let newAnime = AnimeGuardado(context: self.context)
+            newAnime.nombre = anime?.title
+            newAnime.poster = anime?.images?.jpg?.large_image_url
+            newAnime.id = String(id!)
+            saveAnimesGuardados(newAnime)
+        }
+        
+    }
+    
 }
 
 extension MostrarAnimeViewController: MostrarDelegate {
@@ -75,7 +116,11 @@ extension MostrarAnimeViewController: MostrarDelegate {
             if movie.score == nil{
                 self.scoreLabel.text = "Score: Not Scored"
             }
-            self.viewDidLoad()        }
+            if movie.episodes == nil {
+                self.episodiosLabel.text = "Episodes: Not Episodes yet"
+            }
+            self.viewDidLoad()
+        }
     }
     
     func didFailWithError(error: Error) {

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E5530C92968ACA3009CA154 /* AnimeGuardado+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5530C72968ACA3009CA154 /* AnimeGuardado+CoreDataClass.swift */; };
+		9E5530CA2968ACA3009CA154 /* AnimeGuardado+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5530C82968ACA3009CA154 /* AnimeGuardado+CoreDataProperties.swift */; };
+		9E5530CF2968C0AF009CA154 /* GuardadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5530CE2968C0AF009CA154 /* GuardadosViewController.swift */; };
+		9E5530D12968C1AF009CA154 /* GuardadosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5530D02968C1AF009CA154 /* GuardadosTableViewCell.swift */; };
 		9EA5AD3B2963387A00BB4096 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA5AD3A2963387A00BB4096 /* AppDelegate.swift */; };
 		9EA5AD3D2963387A00BB4096 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA5AD3C2963387A00BB4096 /* SceneDelegate.swift */; };
 		9EA5AD3F2963387A00BB4096 /* InicioAnimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA5AD3E2963387A00BB4096 /* InicioAnimeViewController.swift */; };
@@ -28,6 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E5530C72968ACA3009CA154 /* AnimeGuardado+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimeGuardado+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9E5530C82968ACA3009CA154 /* AnimeGuardado+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimeGuardado+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9E5530CE2968C0AF009CA154 /* GuardadosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardadosViewController.swift; sourceTree = "<group>"; };
+		9E5530D02968C1AF009CA154 /* GuardadosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardadosTableViewCell.swift; sourceTree = "<group>"; };
 		9EA5AD372963387A00BB4096 /* AnimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA5AD3A2963387A00BB4096 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EA5AD3C2963387A00BB4096 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +69,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E5530C62968AB87009CA154 /* CoreDataAnime */ = {
+			isa = PBXGroup;
+			children = (
+				9E5530C72968ACA3009CA154 /* AnimeGuardado+CoreDataClass.swift */,
+				9E5530C82968ACA3009CA154 /* AnimeGuardado+CoreDataProperties.swift */,
+			);
+			path = CoreDataAnime;
+			sourceTree = "<group>";
+		};
+		9E5530CB2968B7C1009CA154 /* GuardadosAnime */ = {
+			isa = PBXGroup;
+			children = (
+				9E5530CE2968C0AF009CA154 /* GuardadosViewController.swift */,
+				9E5530D02968C1AF009CA154 /* GuardadosTableViewCell.swift */,
+			);
+			path = GuardadosAnime;
+			sourceTree = "<group>";
+		};
 		9EA5AD2E2963387A00BB4096 = {
 			isa = PBXGroup;
 			children = (
@@ -82,9 +108,11 @@
 			children = (
 				9EA5AD3A2963387A00BB4096 /* AppDelegate.swift */,
 				9EA5AD3C2963387A00BB4096 /* SceneDelegate.swift */,
+				9E5530C62968AB87009CA154 /* CoreDataAnime */,
 				9EA5AD512963461200BB4096 /* InicioAnime */,
 				9EA5AD622963823600BB4096 /* BusquedaAnime */,
 				9EA5AD6A2963C2AC00BB4096 /* MostrarAnime */,
+				9E5530CB2968B7C1009CA154 /* GuardadosAnime */,
 				9EA5AD402963387A00BB4096 /* Main.storyboard */,
 				9EA5AD462963387B00BB4096 /* Assets.xcassets */,
 				9EA5AD482963387B00BB4096 /* LaunchScreen.storyboard */,
@@ -215,8 +243,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EA5AD67296398A600BB4096 /* BusquedaApi.swift in Sources */,
+				9E5530CF2968C0AF009CA154 /* GuardadosViewController.swift in Sources */,
 				9EA5AD552963465C00BB4096 /* InicioAnimeCollectionViewCell.swift in Sources */,
 				9EA5AD452963387A00BB4096 /* AnimeApp.xcdatamodeld in Sources */,
+				9E5530C92968ACA3009CA154 /* AnimeGuardado+CoreDataClass.swift in Sources */,
 				9EA5AD3F2963387A00BB4096 /* InicioAnimeViewController.swift in Sources */,
 				9EA5AD64296387EF00BB4096 /* BusquedaAnimeTableViewCell.swift in Sources */,
 				9EA5AD532963464200BB4096 /* InicioAnimeTableViewCell.swift in Sources */,
@@ -229,6 +259,8 @@
 				9EA5AD6C2963C2C600BB4096 /* MostrarAnimeViewController.swift in Sources */,
 				9EA5AD6E2963D4A400BB4096 /* MostrarData.swift in Sources */,
 				9EA5AD5C2963523B00BB4096 /* AnimeData.swift in Sources */,
+				9E5530D12968C1AF009CA154 /* GuardadosTableViewCell.swift in Sources */,
+				9E5530CA2968ACA3009CA154 /* AnimeGuardado+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
