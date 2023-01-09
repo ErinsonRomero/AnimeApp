@@ -32,6 +32,7 @@ class InicioAnimeViewController: UIViewController {
 }
 
 extension InicioAnimeViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listaSecciones.count
     }

@@ -50,6 +50,7 @@ extension InicioAnimeTableViewCell: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = inicioCollectionView.dequeueReusableCell(withReuseIdentifier: "InicioAnimeCollectionViewCell", for: indexPath) as! InicioAnimeCollectionViewCell
         if let imagen = animes?[indexPath.row].images?.jpg?.large_image_url {
+            cell.imagenAnime.layer.cornerRadius = 10
             cell.imagenAnime.downloaded(from: imagen)
         }
         

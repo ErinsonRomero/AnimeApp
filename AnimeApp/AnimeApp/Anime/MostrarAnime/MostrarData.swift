@@ -14,7 +14,7 @@ struct MostrarData: Decodable {
 struct MostrarDatas: Decodable {
     let title: String
     let images: JpgBusqueda?
-    let synopsis: String
+    let synopsis: String?
     let status: String
     let episodes: Int?
     let genres: [Genres]

@@ -50,14 +50,94 @@
             <objects>
                 <navigationController id="rSZ-IN-fwL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Manga" image="book" catalog="system" id="Cq8-Fi-bVH"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6qn-fQ-96S">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="6qn-fQ-96S">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="8Yh-oy-MJA" kind="relationship" relationship="rootViewController" id="teM-bj-Kff"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khs-CA-H05" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="497" y="263"/>
+        </scene>
+        <!--Manga Inicio View Controller-->
+        <scene sceneID="gha-B3-aCQ">
+            <objects>
+                <viewController id="8Yh-oy-MJA" customClass="MangaInicioViewController" customModule="AnimeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fdx-0g-n1t">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="abf-Eg-PAQ">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" name="Fondo"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zac-f0-K97">
+                                    <size key="itemSize" width="185" height="259"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MangaCollectionViewCell" id="9ZK-jj-q06" customClass="MangaCollectionViewCell" customModule="AnimeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="185" height="259"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="X9j-wf-wTi">
+                                            <rect key="frame" x="0.0" y="0.0" width="185" height="259"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SinImagen" translatesAutoresizingMaskIntoConstraints="NO" id="pC8-Ni-zwo">
+                                                    <rect key="frame" x="8" y="8" width="169" height="215"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="215" id="C2s-Ze-44K"/>
+                                                        <constraint firstAttribute="width" constant="169" id="PfH-dd-0xh"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjb-HY-IsE">
+                                                    <rect key="frame" x="0.0" y="231" width="185" height="20.333333333333343"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" name="Fondo"/>
+                                            <constraints>
+                                                <constraint firstItem="Qjb-HY-IsE" firstAttribute="leading" secondItem="X9j-wf-wTi" secondAttribute="leading" id="EAr-yJ-nHo"/>
+                                                <constraint firstItem="pC8-Ni-zwo" firstAttribute="leading" secondItem="X9j-wf-wTi" secondAttribute="leading" constant="8" id="P8X-14-VVI"/>
+                                                <constraint firstAttribute="bottom" secondItem="Qjb-HY-IsE" secondAttribute="bottom" constant="7.6699999999999999" id="Q2Z-eR-UHo"/>
+                                                <constraint firstItem="Qjb-HY-IsE" firstAttribute="top" secondItem="pC8-Ni-zwo" secondAttribute="bottom" constant="8" id="SYq-ti-dQf"/>
+                                                <constraint firstAttribute="trailing" secondItem="pC8-Ni-zwo" secondAttribute="trailing" constant="8" id="UMX-kw-Vxl"/>
+                                                <constraint firstItem="pC8-Ni-zwo" firstAttribute="top" secondItem="X9j-wf-wTi" secondAttribute="top" constant="8" id="gmw-9C-Tdd"/>
+                                                <constraint firstAttribute="trailing" secondItem="Qjb-HY-IsE" secondAttribute="trailing" id="n1Y-lE-1Fp"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="185" height="259"/>
+                                        <connections>
+                                            <outlet property="mangaImage" destination="pC8-Ni-zwo" id="5q8-Jh-jR1"/>
+                                            <outlet property="mangaName" destination="Qjb-HY-IsE" id="Paw-IL-rYq"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="woy-An-KO8"/>
+                        <color key="backgroundColor" name="Fondo"/>
+                        <constraints>
+                            <constraint firstItem="abf-Eg-PAQ" firstAttribute="trailing" secondItem="woy-An-KO8" secondAttribute="trailing" id="4A2-dp-j76"/>
+                            <constraint firstItem="abf-Eg-PAQ" firstAttribute="top" secondItem="woy-An-KO8" secondAttribute="top" id="RMH-Aa-utk"/>
+                            <constraint firstItem="abf-Eg-PAQ" firstAttribute="bottom" secondItem="woy-An-KO8" secondAttribute="bottom" id="Riy-El-mf1"/>
+                            <constraint firstItem="abf-Eg-PAQ" firstAttribute="leading" secondItem="woy-An-KO8" secondAttribute="leading" id="Sno-SE-C0V"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LN5-0H-xcg"/>
+                    <connections>
+                        <outlet property="mangaCollectionView" destination="abf-Eg-PAQ" id="sh7-vN-187"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WgJ-9D-nzC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1345.8015267175572" y="227.46478873239437"/>
         </scene>
         <!--Random-->
         <scene sceneID="e0c-j0-fkd">
@@ -493,7 +573,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1wa-c3-aFo"/>
+        <segue reference="zBx-aX-uZL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SinImagen" width="681" height="528"/>
