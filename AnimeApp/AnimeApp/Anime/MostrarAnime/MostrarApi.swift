@@ -12,9 +12,9 @@ protocol MostrarDelegate {
 }
 
 struct MostrarApi {
-    let tmdbURL = "https://api.jikan.moe/v4/anime/"
+    let tmdbURL = "https://api.jikan.moe/v4/"
     var delegate: MostrarDelegate?
-    func Tipo(tipo: Int) {
+    func Tipo(tipo: String) {
         let urlString = "\(tmdbURL)\(tipo)/full"
         self.performRequest(urlString: urlString)
     }

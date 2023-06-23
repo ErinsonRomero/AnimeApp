@@ -13,7 +13,7 @@ class InicioAnimeViewController: UIViewController {
 
     let listaSecciones = ["En Emision", "Tops Animes", "Proximamente"] //, "Proximamente"
     let listaTipos = ["seasons/now" ,"top/anime", "seasons/upcoming"]
-    var id: Int?
+    var id: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -45,13 +45,13 @@ extension InicioAnimeViewController: UITableViewDelegate, UITableViewDataSource 
         return celda
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 298
+        return 310
         
     }
 }
 extension InicioAnimeViewController: darDatoInicio {
     func darDato(_ dato: Int) {
-        id = dato
+        id = "anime/\(dato)"
         performSegue(withIdentifier: "inicioToShow", sender: self)
     }
     

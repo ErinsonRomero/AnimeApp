@@ -13,7 +13,7 @@ class BusquedaAnimeViewController: UIViewController {
     let  searchController = UISearchController()
     var busquedaAnimeManager = BusquedaApi()
     var busqueda: [Datas]?
-    var id: Int?
+    var id: String?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -74,7 +74,7 @@ extension BusquedaAnimeViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        id = busqueda![indexPath.row].mal_id
+        id = "anime/\(String(busqueda![indexPath.row].mal_id))"
         performSegue(withIdentifier: "busquedaToShow", sender: self)
     }
     

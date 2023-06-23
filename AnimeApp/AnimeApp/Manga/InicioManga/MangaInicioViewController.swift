@@ -13,6 +13,7 @@ class MangaInicioViewController: UIViewController {
     var manga: [Datas]?
     var addMore = false
     var page = 2
+    var id: String?
     @IBOutlet weak var mangaCollectionView: UICollectionView!
     override func viewWillAppear(_ animated: Bool) {
         mangaManager.Tipo(tipo: "top/manga")
@@ -25,6 +26,12 @@ class MangaInicioViewController: UIViewController {
         mangaCollectionView.dataSource = self
 
         // Do any additional setup after loading the view.
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mangaInicioToShow" {
+            let destinacionVC = segue.destination as! MostrarAnimeViewController
+            destinacionVC.id = id
+        }
     }
     
 
@@ -75,6 +82,11 @@ extension MangaInicioViewController: UICollectionViewDelegate, UICollectionViewD
                 self.addMore = false
             }
         })
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.id = "manga/\(String(self.manga![indexPath.row].mal_id))"
+        performSegue(withIdentifier: "mangaInicioToShow", sender: self)
     }
     
     

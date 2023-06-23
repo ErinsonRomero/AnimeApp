@@ -12,12 +12,12 @@ struct MostrarData: Decodable {
 }
 
 struct MostrarDatas: Decodable {
-    let title: String
+    let title: String?
     let images: JpgBusqueda?
     let synopsis: String?
-    let status: String
+    let status: String?
     let episodes: Int?
-    let genres: [Genres]
+    let genres: [Genres]?
     let score: Float?
     
 }
@@ -30,5 +30,5 @@ struct PosterBusqueda: Decodable {
 }
 
 struct Genres: Decodable {
-    let name: String
+    let name: String?
 }

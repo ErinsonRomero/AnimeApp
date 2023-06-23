@@ -21,7 +21,7 @@ class MostrarAnimeViewController: UIViewController {
     @IBOutlet weak var addButton: UIBarButtonItem!
     
     
-    var id: Int?
+    var id: String?
     var name: String?
     var anime: MostrarDatas?
     var mostrarAnimeManager = MostrarApi()
@@ -53,9 +53,11 @@ class MostrarAnimeViewController: UIViewController {
         if let genres = anime?.genres {
             var generos = ""
             for i in genres {
-                generos = "\(generos) \(i.name),"
+                generos = "\(generos) \(i.name!),"
             }
-            generos.removeLast()
+            if generos != "" {
+                generos.removeLast()
+            }
             generosLabel.text = "Genres:\(generos)"
         }
         if let score = anime?.score {
@@ -126,6 +128,4 @@ extension MostrarAnimeViewController: MostrarDelegate {
     func didFailWithError(error: Error) {
         
     }
-    
-    
 }

@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "baseviper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/EdeXApple/BaseViper",
+      "state" : {
+        "revision" : "cd5322fb2b36e2343e4ad41e9392272dcb4b78d7",
+        "version" : "1.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}

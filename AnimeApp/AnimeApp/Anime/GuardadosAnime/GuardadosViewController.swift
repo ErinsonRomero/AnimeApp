@@ -12,7 +12,7 @@ class GuardadosViewController: UIViewController {
     @IBOutlet weak var guardadosTableView: UITableView!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var items: [AnimeGuardado]?
-    var id: Int?
+    var id: String?
     
     
     override func viewDidLoad() {
@@ -21,6 +21,7 @@ class GuardadosViewController: UIViewController {
         guardadosTableView.dataSource = self
         fetchAnimesGuardados()
     }
+
     func fetchAnimesGuardados() {
         do {
             self.items = try context.fetch(AnimeGuardado.fetchRequest())
@@ -32,7 +33,6 @@ class GuardadosViewController: UIViewController {
             
         } catch {}
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "guardadoToShow" {
@@ -79,7 +79,8 @@ extension GuardadosViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let idAnime = items?[indexPath.row].id {
-            self.id = Int(idAnime)
+            self.id = idAnime
+            print(idAnime)
             performSegue(withIdentifier: "guardadoToShow", sender: self)
         }
         
